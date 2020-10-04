@@ -3,28 +3,82 @@
 <html lang="en-US">
 <head>
     <meta charset="UTF-8">
-    <meta name="keywords" content="Survey, Form, freeCodeCamp">
-    <meta name="description" content="freeCodeCamp Survey Project">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+    <meta name="keywords" content="Survey, Form, freeCodeCamp"/>
+    <meta name="description" content="freeCodeCamp Survey Project"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>    
     <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js">
     </script>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css"/>
     <title>FCC: Survey Form</title>
 </head>
 
-<body>             <!--all visible content on the page go inside body-->
+<body onload="document.form.reset();">             <!--all visible content on the page go inside body, 
+    clear fields on reload-->
     <h1 id="title">freeCodeCamp Survey From</h1>
     <p id="description">Thank you for taking the time to help us impove the platform</p>
-    <!--Need to change this into a form with labels-->
-    <h2>Name</h2>  <!--input text field-->
-    <h2>Email</h2>  <!--input email field-->
-    <h2>Age<span style="font-weight: lighter;">(optional)</span></h2> <!--input number field--> 
-    <h2>Which option best describes your current role?</h2> <!--input options-->
-    <h2>Would you recommend freeCodeCamp to a friend?</h2>  <!--input radio boxes-->
-    <h2>What is your favourite feature of freeCodeCamp?</h2> <!--input options-->
-    <h2>What would you like to see improve(check all that apply)</h2> <!--input checkboxes-->
-    <h2>Any comments or suggestions?</h2> <!--input text field--> 
-    <button id="submit" onclick="document.location='index.html'" target="_self">Submit</button>
+    <!--All input fields must have a name attribute otherwise the value of
+    the field will not be sent. I did not use name attribute as I don't intend to collect
+    data
+    -->
+    <form action="index.html" target="_self" name="form">
+    <label>Name</label><br/>  <!--input text field-->
+    <input type="text" placeholder="Enter your name"/ required><br/>
+    <label>Email</label><br/>  <!--input email field-->
+    <input type="email" placeholder="Enter your email" required/><br/>
+    <label>Age<span style="font-weight: lighter;">(optional)</span></label> <br/><!--input number field--> 
+    <input type="number" min="0" max="120" placeholder="Age" required/><br/>
+    <label>Which option best describes your current role?</label><br/> <!--input options-->
+    <select id="role" name="role" required="">
+        <option disabled="" selected="" value="">Select current role</option>
+        <option value="student">Student</option>
+        <option value="full-time-job">Full time job</option>
+        <option value="full-time-learner">Full time learner</option>
+        <option value="no-answer">Prefer not to say</option>
+        <option value="other">Other</option>
+    </select><br>
+    <label>Would you recommend freeCodeCamp to a friend?</label><br/>  <!--input radio boxes-->
+    <input type="radio" id="definetly" checked="checked" name="recommend" required/>
+    <label for="definetly">Definetly</label><br/>
+    <input type="radio" id="maybe" name="recommend"/>
+    <label for="maybe">Maybe</label><br/>
+    <input type="radio" id="no" name="recommend"/>
+    <label for="no">Not sure</label><br/>
+    <label>What is your favourite feature of freeCodeCamp?</label><br/> <!--input options-->
+    <select id="feature" name="feature" required>
+        <option disabled="" selected="" value="">Select an option</option>
+        <option value="challenges">Challenges</option>
+        <option value="projects">Projects</option>
+        <option value="community">Community</option>
+        <option value="open-source">Open Source</option>
+    </select><br>
+    <label>What would you like to see improve(check all that apply)</label> <br/><!--input checkboxes-->
+    <input type="checkbox" id="front-end"/>
+    <label for="front-end">Front-end Projects</label><br/>
+    <input type="checkbox" id="back-end"/>
+    <label for="back-end">Back-end Projects</label><br/>
+    <input type="checkbox" id="data"/>
+    <label for="data">Data Visualization</label><br/>
+    <input type="checkbox" id="challenges"/>
+    <label for="challenges">Challenges</label><br/>
+    <input type="checkbox" id="open"/>
+    <label for="open">Open Source Community</label><br/>
+    <input type="checkbox" id="help"/>
+    <label for="help">Glitter help rooms</label><br/>
+    <input type="checkbox" id="videos"/>
+    <label for="videos">Videos</label><br/>
+    <input type="checkbox" id="meetups"/>
+    <label for="meetups">City Meetups</label><br/>
+    <input type="checkbox" id="wiki"/>
+    <label for="wiki">Wiki</label><br/>
+    <input type="checkbox" id="forum"/>
+    <label for="forum">Forum</label><br/>
+    <input type="checkbox" id="course"/>
+    <label for="course">Additional Courses</label><br/>
+    <label>Any comments or suggestions?</label><br/> <!--input text field--> 
+    <textarea name="suggestions" rows="5" cols="30" placeholder="Enter your comment here"></textarea>><br>
+    <input type="submit" value="Submit"/><br/>
+    <input type="reset"/>
+    </form>
 </body>
 
 
