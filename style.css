@@ -1,3 +1,10 @@
-p {
-  text-emphasis: italic;
+body {
+  background-image: url('images/2560x1600-585284-computer-desk.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+  font-size: 1vw;
+}
+
+#description {
+  font-style: italic;
 }
