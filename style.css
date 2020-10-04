@@ -1,11 +1,51 @@
 body {
-  background-image: url('images/2560x1600-585284-computer-desk.jpg');
-  background-size: cover;
-  background-attachment: fixed;
-  font-size: 1vw;
-  color: red;
+  background-color: rgba(100, 150, 255, 0.75);
+  font-size: 1.2vw;
+  color: black;
+  text-align: center;
+  padding: 4% 0% 4% 0%;
 }
 
 #description {
   font-style: italic;
+  font-size: 1.3vw;
+  margin: 0.5% 0% 4% 0%;
+}
+
+form {
+  margin: 0 20% 0 20%;
+  text-align: justify;
+  background-color: rgba(155, 175, 255, 0.75);
+  padding: 3% 5% 3% 5%;
+  font-size: 1.3vw;
+}
+
+html {
+  background-image: url('images/2560x1600-585284-computer-desk.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.form-element {
+  width: 100%;
+  padding: 1.5% 0% 1.5% 0%;
+  margin: 0.5% 0% 2vw 0%;
+}
+
+#submit {
+  width: 100%;
+  padding: 1% 0% 1% 0%;
+  background-color: rgba(110, 51, 150, 0.75);
+  border: rgba(110, 51, 150, 0.75);
+}
+
+#no, #course {
+  margin-bottom: 6%;
+}
+
+
+
+#reset {
+  margin-top: 3%;
+  width: 100%;
 }

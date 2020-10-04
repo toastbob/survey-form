@@ -6,29 +6,28 @@
     <meta name="keywords" content="Survey, Form, freeCodeCamp"/>
     <meta name="description" content="freeCodeCamp Survey Project"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>    
-    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js">
-    </script>
     <link rel="stylesheet" href="style.css"/>
     <title>FCC: Survey Form</title>
+    <script src=“https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js”></script>
+    <link rel="stylesheet" href="https://unpkg.com/modern-css-reset/dist/reset.min.css" />
 </head>
 
-<body onload="document.form.reset();">             <!--all visible content on the page go inside body, 
-    clear fields on reload-->
+<body>             <!--all visible content on the page go inside body-->
     <h1 id="title">freeCodeCamp Survey From</h1>
     <p id="description">Thank you for taking the time to help us impove the platform</p>
     <!--All input fields must have a name attribute otherwise the value of
     the field will not be sent. I did not use name attribute as I don't intend to collect
     data
     -->
-    <form action="index.html" target="_self" name="form">
-    <label>Name</label><br/>  <!--input text field-->
-    <input type="text" placeholder="Enter your name"/ required><br/>
-    <label>Email</label><br/>  <!--input email field-->
-    <input type="email" placeholder="Enter your email" required/><br/>
-    <label>Age<span style="font-weight: lighter;">(optional)</span></label> <br/><!--input number field--> 
-    <input type="number" min="0" max="120" placeholder="Age" required/><br/>
+    <form id="survey-form" action="index.html" target="_self" name="form">
+    <label id="name-label">Name</label><br/>  <!--input text field-->
+    <input class="form-element" type="text" placeholder="Enter your name" id="name" required><br/>
+    <label id="email-label">Email</label><br/>  <!--input email field-->
+    <input class="form-element" type="email" placeholder="Enter your email" id="email" required/><br/>
+    <label id="number-label">Age<span style="font-weight: lighter;">(optional)</span></label> <br/><!--input number field--> 
+    <input class="form-element" type="number" min="0" max="120" placeholder="Age" id="number" required/><br/>
     <label>Which option best describes your current role?</label><br/> <!--input options-->
-    <select id="role" name="role" required="">
+    <select class="form-element" id="dropdown" name="role" required="">
         <option disabled="" selected="" value="">Select current role</option>
         <option value="student">Student</option>
         <option value="full-time-job">Full time job</option>
@@ -37,47 +36,47 @@
         <option value="other">Other</option>
     </select><br>
     <label>Would you recommend freeCodeCamp to a friend?</label><br/>  <!--input radio boxes-->
-    <input type="radio" id="definetly" checked="checked" name="recommend" required/>
+    <input type="radio" id="definetly" checked="checked" name="recommend" value="default" required/>
     <label for="definetly">Definetly</label><br/>
-    <input type="radio" id="maybe" name="recommend"/>
+    <input type="radio" id="maybe"  value="maybe" name="recommend"/>
     <label for="maybe">Maybe</label><br/>
-    <input type="radio" id="no" name="recommend"/>
+    <input type="radio" id="no"  value="no" name="recommend"/>
     <label for="no">Not sure</label><br/>
     <label>What is your favourite feature of freeCodeCamp?</label><br/> <!--input options-->
-    <select id="feature" name="feature" required>
+    <select class="form-element" id="feature" name="feature" required>
         <option disabled="" selected="" value="">Select an option</option>
         <option value="challenges">Challenges</option>
         <option value="projects">Projects</option>
         <option value="community">Community</option>
         <option value="open-source">Open Source</option>
     </select><br>
-    <label>What would you like to see improve(check all that apply)</label> <br/><!--input checkboxes-->
-    <input type="checkbox" id="front-end"/>
+    <label>What would you like to see improve? <span style="font-weight: lighter;">(check all that apply)</span></label> <br/><!--input checkboxes-->
+    <input type="checkbox" id="front-end" value="front-end"/>
     <label for="front-end">Front-end Projects</label><br/>
-    <input type="checkbox" id="back-end"/>
+    <input type="checkbox" id="back-end" value="back-end"/>
     <label for="back-end">Back-end Projects</label><br/>
-    <input type="checkbox" id="data"/>
+    <input type="checkbox" id="data" value="data"/>
     <label for="data">Data Visualization</label><br/>
-    <input type="checkbox" id="challenges"/>
+    <input type="checkbox" id="challenges" value="challenges"/>
     <label for="challenges">Challenges</label><br/>
-    <input type="checkbox" id="open"/>
+    <input type="checkbox" id="open" value="open"/>
     <label for="open">Open Source Community</label><br/>
-    <input type="checkbox" id="help"/>
+    <input type="checkbox" id="help" value="value"/>
     <label for="help">Glitter help rooms</label><br/>
-    <input type="checkbox" id="videos"/>
+    <input type="checkbox" id="videos" value="videos"/>
     <label for="videos">Videos</label><br/>
-    <input type="checkbox" id="meetups"/>
+    <input type="checkbox" id="meetups" value="meetups"/>
     <label for="meetups">City Meetups</label><br/>
-    <input type="checkbox" id="wiki"/>
+    <input type="checkbox" id="wiki" value="wiki"/>
     <label for="wiki">Wiki</label><br/>
-    <input type="checkbox" id="forum"/>
+    <input type="checkbox" id="forum" value="forum"/>
     <label for="forum">Forum</label><br/>
-    <input type="checkbox" id="course"/>
+    <input type="checkbox" id="course" value="course"/>
     <label for="course">Additional Courses</label><br/>
     <label>Any comments or suggestions?</label><br/> <!--input text field--> 
-    <textarea name="suggestions" rows="5" cols="30" placeholder="Enter your comment here"></textarea>><br>
-    <input type="submit" value="Submit"/><br/>
-    <input type="reset"/>
+    <textarea class="form-element" name="suggestions" rows="5" cols="30" placeholder="Enter your comment here"></textarea><br>
+    <input type="submit" value="Submit" id="submit"/><br/>
+    <input type="reset" id="reset"/>
     </form>
 </body>
 
